@@ -1,0 +1,17 @@
+{% extends 'index.html' %}
+
+{% block content %}
+  <div class="container p-3">
+       <div style="display:flex;justify-content: space-between;">
+  	 <h3 style="margin-bottom: 15px; text-align: center;"> Retseptni Tahrirlash</h3>
+        <button class="btn btn-success px-5" form="form1" style="display:block;margin: auto; padding: 10px 15px; font-size: 18px;" type="submit"> Tahrirlash</button>
+        </div>
+  	 <form method="post" id="form1">
+         {% csrf_token %}
+         {{ form.as_p }}
+  	 
+  	 </form> 
+  </div>
+{% endblock content %}
+</body>
+</html>

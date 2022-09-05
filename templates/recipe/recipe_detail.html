@@ -1,0 +1,77 @@
+{% extends 'index.html' %}
+
+{% block content %}
+<div class="container">
+	<h3 style="text-align: center;">{{recipe.bemor}}</h3>
+	 <ul style="font-size:17px;margin-top: 35px;">
+    	<li> <b> Bemor </b>: {{recipe.bemor}}</li>      
+    	<li> <b> Diagnozi </b>: {{recipe.diagnoz}}</li>
+         {%  if recipe.firstrec %}  
+       <li> <b> 1. </b> {{recipe.firstrec}} </li>
+         {% endif %}
+         {%  if recipe.secondrec %}
+       <li> <b> 2. </b> {{recipe.secondrec}}</li>
+         {% endif %}
+         {%  if recipe.thirdrec %}
+       <li> <b>  3. </b> {{recipe.thirdrec}} </li>
+         {% endif %}
+         {%  if recipe.fourthtrec %}  
+       <li> <b> 4. </b> {{recipe.fourthrec}} </li>
+         {% endif %}
+         {%  if recipe.fifthrec %}
+       <li> <b> 5. </b> {{recipe.fifthrec}} </li>
+         {% endif %}
+         {%  if recipe.sixthrec %}
+       <li> <b> 6. </b> {{recipe.sixthrec}} </li>
+         {% endif %}
+         {%  if recipe.seventhrec %}  
+       <li> <b> 7. </b> {{recipe.seventhrec}} </li>
+         {% endif %}
+         {%  if recipe.eightthrec %}
+      <li> <b> 8. </b> {{recipe.eightthrec}} </li>
+         {% endif %}
+         {%  if recipe.ninethrec %}
+      <li> <b> 9. </b> {{recipe.ninethrec}} </li>
+         {% endif %}
+         {%  if recipe.tenthrec %}
+      <li> <b> 10. </b> {{recipe.tenthrec}} </li>
+         {% endif %}
+         {%  if recipe.eleventhrec %}
+      <li> <b> 11. </b> {{recipe.eleventhrec}} </li>
+         {% endif %}	
+         {%  if recipe.twelvethrec %}
+      <li> <b> 12. </b> {{recipe.twelvethrec}} </li>
+         {% endif %}
+         {%  if recipe.thirdteenthrec %}
+      <li> <b> 13. </b> {{recipe.thirdteenthrec}} </li>
+         {% endif %}
+         {%  if recipe.fourteenthrec %}
+      <li> <b> 14. </b> {{recipe.fourteenthrec}} </li>
+         {% endif %}
+         {%  if recipe.fifteenthrec %}
+      <li> <b> 15. </b> {{recipe.fifteenthrec}} </li>
+         {% endif %}
+      </ul>   
+      <div style="display:flex;">
+		<a style="font-size: 16px; margin-left: 20px; margin-right: 10px; display: flex;align-items: center;" href="{% url 'update_recipe' recipe.pk %}" class="btn btn-success"><span style="margin-right:5px;"> Tahrirlash </span> <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+  <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+  <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
+</svg></a><a style="font-size: 16px; margin-right: 10px; display: flex;align-items: center;" class="btn btn-danger" href="{% url 'delete_recipe' recipe.pk %}"><span style="margin-right:5px;"> O'chirish </span> <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+  <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
+  <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
+</svg></a>
+      <br>
+      <a style="font-size: 16px; margin-right: 10px; display:flex;align-items: center;" href="{% url 'print_recipe' recipe.pk %}" class="btn btn-primary"><span style="margin-right:5px;"> Chop etish </span> <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-printer" viewBox="0 0 16 16">
+  <path d="M2.5 8a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1z"/>
+  <path d="M5 1a2 2 0 0 0-2 2v2H2a2 2 0 0 0-2 2v3a2 2 0 0 0 2 2h1v1a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-1h1a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-1V3a2 2 0 0 0-2-2H5zM4 3a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v2H4V3zm1 5a2 2 0 0 0-2 2v1H2a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-1v-1a2 2 0 0 0-2-2H5zm7 2v3a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1z"/>
+</svg></a>
+</div>
+<br>
+<a style="font-size: 16px; margin-left:20px; display:flex;width: 405px; justify-content: center;align-items: center;" class="btn btn-warning" href="{% url 'recipe_list' %}">  
+      <span style="margin-right:5px;">Ro'yxatga qaytish</span><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-list-task" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M2 2.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5V3a.5.5 0 0 0-.5-.5H2zM3 3H2v1h1V3z"/>
+  <path d="M5 3.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zM5.5 7a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1h-9zm0 4a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1h-9z"/>
+  <path fill-rule="evenodd" d="M1.5 7a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H2a.5.5 0 0 1-.5-.5V7zM2 7h1v1H2V7zm0 3.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5H2zm1 .5H2v1h1v-1z"/>
+</svg></a>
+</div>
+{% endblock content %}
