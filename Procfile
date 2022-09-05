@@ -1,0 +1,1 @@
+web: gunicorn shifoxona.wsgi --log-file -
