@@ -12,9 +12,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = '"l*-hh%5&6ut_#j5x*t--s2*$mp_qn5k(_&@s8l(eyx-(mz(6oo"'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = []
 
 AUTH_USER_MODEL = 'users.CustomUser'
 
@@ -32,17 +32,11 @@ ACCOUNT_UNIQUE_EMAIL = True
 
 ACCOUNT_SESSION_REMEMBER = True
 
-CSRF_COOKIE_SECURE = True
+SECURE_SSL_REDIRECT=False
 
-SESSION_COOKIE_SECURE = True
+SESSION_COOKIE_SECURE=False
 
-SECURE_SSL_REDIRECT = True
-
-SECURE_HSTS_SECONDS = True
-
-SECURE_HSTS_INCLUDE_SUBDOMAINS = True
-
-SECURE_HSTS_PRELOAD = True
+CSRF_COOKIE_SECURE=False
 
 # Application definition
 
@@ -149,7 +143,7 @@ USE_I18N = True
 
 USE_TZ = False
 
-USE_L10N = True
+USE_L10N = False
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
