@@ -11,7 +11,7 @@ class CreateReferralView(LoginRequiredMixin, generic.CreateView):
 	model = Referral
 	form_class = ReferralForm
 	template_name = 'referral/create_referral.html'
-	login_url = 'login'
+	login_url = 'account_login'
 
 class ReferralDetailView(generic.DetailView):
 	model = Referral
