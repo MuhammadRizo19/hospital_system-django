@@ -5,11 +5,13 @@ from .models import Referral
 from django.db.models import Q
 from django.urls import reverse_lazy
 from django.contrib import messages
+from django.contrib.auth.mixins import LoginRequiredMixin 
 
-class CreateReferralView(generic.CreateView):
+class CreateReferralView(LoginRequiredMixin, generic.CreateView):
 	model = Referral
 	form_class = ReferralForm
 	template_name = 'referral/create_referral.html'
+	login_url = 'login'
 
 class ReferralDetailView(generic.DetailView):
 	model = Referral

@@ -3,6 +3,7 @@ from django.views import generic
 from referral.models import Referral
 from recipe.models import Recipe
 
+
 class HomePageView(generic.TemplateView):
 	template_name = 'index.html'
 
