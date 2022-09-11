@@ -13,40 +13,46 @@ class CreateReferralView(LoginRequiredMixin, generic.CreateView):
 	template_name = 'referral/create_referral.html'
 	login_url = 'account_login'
 
-class ReferralDetailView(generic.DetailView):
+class ReferralDetailView(LoginRequiredMixin, generic.DetailView):
 	model = Referral
 	template_name = 'referral/referral_detail.html'	
 	contextual_object_name = 'referral'
+	login_url = 'account_login'
 
-class ReferralListView(generic.ListView):
+class ReferralListView(LoginRequiredMixin, generic.ListView):
 	model = Referral
 	template_name = 'referral/referral_list.html'
 	contextual_object_name = 'referral_list'
 	paginate_by = 5
+	login_url = 'account_login'
 
-class ReferralUpdateView(generic.UpdateView):
+class ReferralUpdateView(LoginRequiredMixin, generic.UpdateView):
 	model = Referral
 	form_class = ReferralForm
 	template_name = 'referral/update_referral.html'
 	contextual_object_name = 'referral'
+	login_url = 'account_login'
 
-class SearchReferralView(generic.ListView):
+class SearchReferralView(LoginRequiredMixin, generic.ListView):
 	model = Referral
 	context_object_name = 'referral_list'
 	template_name = 'referral/search_referral.html'
+	login_url = 'account_login'
 
 	def get_queryset(self): 
 		query = self.request.GET.get('referral')
 		return Referral.objects.filter(Q(bemor__icontains=query) | Q(address__icontains=query)
 		)
 
-class ReferralDeleteView(generic.DeleteView):
+class ReferralDeleteView(LoginRequiredMixin, generic.DeleteView):
 	model = Referral
 	context_object_name = 'referral'
 	template_name = 'referral/delete_referral.html'
 	success_url = reverse_lazy('referral_list')
+	login_url = 'account_login'
 
-class PrintReferralView(generic.DetailView):
+class PrintReferralView(LoginRequiredMixin, generic.DetailView):
 	model = Referral
 	template_name = 'referral/print_referral.html'
 	contextual_object_name = 'referral'
+	login_url = 'account_login'
