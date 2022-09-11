@@ -15,7 +15,7 @@ SECRET_KEY = '"l*-hh%5&6ut_#j5x*t--s2*$mp_qn5k(_&@s8l(eyx-(mz(6oo"'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['faxriddinshifo.herokuapp.com']
 
 AUTH_USER_MODEL = 'users.CustomUser'
 
@@ -34,9 +34,11 @@ ACCOUNT_UNIQUE_EMAIL = True
 ACCOUNT_SESSION_REMEMBER = True
 
 
+SECURE_SSL_REDIRECT = True
+
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
 # Application definition
-
-
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
