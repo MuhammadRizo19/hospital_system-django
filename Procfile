@@ -1,1 +1,1 @@
-web: gunicorn shifoxona.wsgi --log-file -
+web: gunicorn hospital.wsgi --log-file -
