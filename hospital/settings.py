@@ -1,6 +1,7 @@
 import os
 from pathlib import Path
 
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -42,13 +43,13 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'whitenoise.runserver_nostatic',
     'django.contrib.staticfiles',
 
     # third-party packages
     'allauth',
     'allauth.account',
     'crispy_forms',
-    'whitenoise.runserver_nostatic',
 
     #local apps
     'users.apps.UsersConfig',
@@ -59,8 +60,8 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    'django.contrib.sessions.middleware.SessionMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
+    'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -69,9 +70,6 @@ MIDDLEWARE = [
     'django.middleware.cache.FetchFromCacheMiddleware',
 ]
 
-CACHE_MIDDLEWARE_ALIAS = 'default'
-CACHE_MIDDLEWARE_SECONDS = 604800
-CACHE_MIDDLEWARE_KEY_PREFIX = ''
 
 ROOT_URLCONF = 'hospital.urls'
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
@@ -102,7 +100,7 @@ WSGI_APPLICATION = 'hospital.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'NAME': os.path.join(BASE_DIR,'db.sqlite3'),
     }
 }
 
@@ -131,13 +129,12 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'Asia/Tashkent'
+TIME_ZONE = 'UTC'
 
 USE_I18N = True
 
-USE_TZ = False
+USE_TZ = True
 
-USE_L10N = False
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
@@ -149,7 +146,7 @@ STATICFILES_FINDERS = [
     "django.contrib.staticfiles.finders.AppDirectoriesFinder",
 ]
 
-MEDIA_URL = '/media/' 
+MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
