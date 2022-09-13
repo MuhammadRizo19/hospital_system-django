@@ -13,4 +13,4 @@ urlpatterns = [
     path('', include('main.urls')),
     path('referral/', include('referral.urls')),
     path('recipe/', include('recipe.urls')),
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) + static(settings.MEDIA_URL, document_root=settings.STATIC_ROOT)
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
