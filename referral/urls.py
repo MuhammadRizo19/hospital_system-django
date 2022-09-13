@@ -6,7 +6,8 @@ from .views import (
 	ReferralUpdateView,
 	SearchReferralView,
 	ReferralDeleteView,
-	PrintReferralView
+	PrintReferralView,
+	export_excel
 	)
 
 urlpatterns = [
@@ -17,4 +18,5 @@ urlpatterns = [
     path('search_referral/', SearchReferralView.as_view(), name='search_referral'),
     path('<uuid:pk>/delete', ReferralDeleteView.as_view(), name='delete_referral'),
     path('<uuid:pk>/print_referral/', PrintReferralView.as_view(), name='print_referral'),
+    path('export_excel/', export_excel, name='export_excel'),
 ]
