@@ -44,8 +44,8 @@ class RecipeForm(forms.ModelForm):
 			'fifteenthrec': "",
 		}
 		widgets = {
-		    'bemor' : forms.TextInput(attrs={'class':'form-control', 'placeholder':'bemor ismi'}),
-		    'diagnoz': forms.TextInput(attrs={'class':'form-control', 'placeholder':'diagnozi'}),
+		    'bemor' : forms.TextInput(attrs={'class':'form-control', 'placeholder':'бемор исми'}),
+		    'diagnoz': forms.TextInput(attrs={'class':'form-control', 'placeholder':'диагнози'}),
 			'firstrec':  forms.TextInput(attrs={'class':'form-control', 'placeholder':'1. '}), 
 			'secondrec':  forms.TextInput(attrs={'class':'form-control', 'placeholder':'2. '}),
 			'thirdrec':  forms.TextInput(attrs={'class':'form-control', 'placeholder':'3. '}),

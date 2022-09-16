@@ -3,21 +3,21 @@
 {% block content %}   
    <div class="container">
             <div class="add-button" style="display: flex; justify-content: space-between; align-content: center;">
-                <h2>Yo'llamalar</h2>
+                <h2>Йўлламалар</h2>
                 <div style="display:flex;">
-                <a href="{% url 'export_excel' %}" style="height: 40px;padding: 10px; margin-top:30px; margin-right:15px;" class="btn btn-info"> Export Excel</a> 
+                <a href="{% url 'export_excel' %}" style="height: 40px;padding: 10px; margin-top:30px; margin-right:15px;" class="btn btn-info"> Эхпорт Эхcел</a> 
                 <a class="btn btn-success" href="{% url 'create_referral' %}" style="height: 40px;padding: 10px; margin-top:30px; display: flex;"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
   <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
-</svg> <span> Yangi qo'shish </span></a>
+</svg> <span> Янги қўшиш </span></a>
             </div>
             </div>
             <!-- table -->
             <table class="table table-striped">
                 <thead>
-                    <th>#</th>
-                    <th>Ismi</th>
-                    <th>Yashash Joyi</th>
-                    <th>Diagnozi</th>
+                    <th>№</th>
+                    <th>Исми</th>
+                    <th>Яшаш Жойи</th>
+                    <th>Диагнози</th>
                 </thead>
                 <tbody>
                 {% for referral in referral_list %}
@@ -36,17 +36,17 @@
 <center>
   {% if page_obj.has_previous %}
     <a class="btn btn-info" href="?page=1" class="m-2">1</a>
-    <a class="btn btn-info" href="?page={{page_obj.previous_page_number}}">oldingisi</a>
+    <a class="btn btn-info" href="?page={{page_obj.previous_page_number}}">олдингиси</a>
   {% endif %}
   {% if page_obj.has_next %}
-  <a class="btn btn-info" href="?page={{page_obj.next_page_number}}">keyingisi</a>
+  <a class="btn btn-info" href="?page={{page_obj.next_page_number}}">кейингиси</a>
   <a class="btn btn-info" href="?page={{page_obj.paginator.num_pages}}"> {{page_obj.paginator.num_pages}}</a>
   {% endif %}
 </center> 
   <center style="margin-top: 10px;">
   <form method="get" style="display: flex;width: 50%;" action="{% url 'search_referral' %}">
-      <input type="search" name="referral" class="form-control" style=" margin-right: 10px;" placeholder="qidirish">
-      <button class="btn btn-success" style="display: flex;justify-content: center; align-items: center;"><span style="margin-right:3px;"> Qidirish </span> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+      <input type="search" name="referral" class="form-control" style=" margin-right: 10px;" placeholder="Қидириш">
+      <button class="btn btn-success" style="display: flex;justify-content: center; align-items: center;"><span style="margin-right:3px;"> Қидириш </span> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
   <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
 </svg></button>
   </form>

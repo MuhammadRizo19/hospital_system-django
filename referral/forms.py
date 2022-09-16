@@ -16,11 +16,11 @@ class ReferralForm(forms.ModelForm):
 		    'whereas' : "",
 		}
 		widgets = {
-		    'bemor' : forms.TextInput(attrs={'class':'form-control', 'placeholder':'bemor ismi'}),
-		    'birthdate' : forms.TextInput(attrs={'class':'form-control', 'placeholder':'tug\'ilgan yili '}),
-		    'address' : forms.TextInput(attrs={'class':'form-control', 'placeholder':'yashash manzili'}),
-		    'kasalligi' : forms.TextInput(attrs={'class':'form-control', 'placeholder':'kasalligi'}),
-		    'qayerga' : forms.TextInput(attrs={'class':'form-control', 'placeholder':'qayerga jo\'natiladi'}),
-		    'diagnoz' : forms.TextInput(attrs={'class':'form-control', 'placeholder':'diagnozi'}),
-		    'whereas' : forms.TextInput(attrs={'class':'form-control', 'placeholder':'shifoxona joylashuvi'}), 
+		    'bemor' : forms.TextInput(attrs={'class':'form-control', 'placeholder':'бемор исми'}),
+		    'birthdate' : forms.TextInput(attrs={'class':'form-control', 'placeholder':'тугилган йили '}),
+		    'address' : forms.TextInput(attrs={'class':'form-control', 'placeholder':'яшаш манзили'}),
+		    'kasalligi' : forms.TextInput(attrs={'class':'form-control', 'placeholder':'касаллиги'}),
+		    'qayerga' : forms.TextInput(attrs={'class':'form-control', 'placeholder':'қаерга жўнатилади'}),
+		    'diagnoz' : forms.TextInput(attrs={'class':'form-control', 'placeholder':'диагнози'}),
+		    'whereas' : forms.TextInput(attrs={'class':'form-control', 'placeholder':'юборилган шифохона қаерда жойлашган'}), 
 		}

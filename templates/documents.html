@@ -2,22 +2,22 @@
 
 {% block content %}
 <div class="container">
-	<h2 class="text-center mt-3">Bizda mavjud dokumentlar</h2>
+	<h2 class="text-center mt-3">Бизда мавжуд хужжатлар</h2>
     <div style="margin-top: 35px;">
     	<a href="{% url 'referral_list' %}">
 	<div class="card bg-info" style="border:1px solid grey;border-left: 15px solid grey; padding: 15px;margin-bottom: 10px;">
-		<div class="card-title" style="font-size:35px;">Yo'llanmalar</div>
+		<div class="card-title" style="font-size:35px;">Йўлланмалар</div>
 		<div class="card-body" style="display: flex;justify-content: space-between; align-items: center;">
-		 <p style="font-size:16px;"> Bemorni ma'lum bir shifoxona yoki tekshiruvga yuborish</p>
+		 <p style="font-size:16px;"> Беморни маълум бир шифохона ёки текширувга юбориш</p>
 		 <p style="font-size:25px;font-weight: 700;">{{numreferral}}</p>
 		</div>
 	</div>
     </a>
     <a href="{% url 'recipe_list' %}">
 	<div class="card bg-info" style="border:1px solid grey;border-left: 15px solid grey;padding: 20px;">
-		<div class="card-title" style="font-size:35px;">Retseptlar</div>
+		<div class="card-title" style="font-size:35px;">Рецептлар</div>
 		<div class="card-body" style="display:flex;justify-content: space-between;align-items: center;">
-	  <p style="font-size:16px;"> GemoroyEktomiya, Anus yorilishi, Nyak, Yiringli yara kabilar uchun</p>
+	  <p style="font-size:16px;"> Гемороектомия, Анус ёрилиши, Няк, Йирингли яра кабилар учун</p>
 		 <p style="font-size:25px;font-weight: 700;">{{numrecipe}}</p>
 		</div>
 	</div>
